@@ -1,0 +1,10 @@
+﻿services:
+  - type: web
+    name: executive-bi-dashboard
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:APP
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
